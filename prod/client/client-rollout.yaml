@@ -1,0 +1,64 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  namespace: wavesmusicplayer
+  name: waves-client-web-prod
+  labels:
+    app.kubernetes.io/instance: waves-client-web-prod
+    app.kubernetes.io/version: latest
+spec:
+  replicas: 2
+  strategy:
+    canary:
+      canaryService: waves-client-web-prod-canary-service # our created canary service
+      stableService: waves-client-web-prod-stable-service # our created stable service
+      dynamicStableScale: true # dynamically scale down the old versions
+      trafficRouting:
+        plugins:
+          argoproj-labs/gatewayAPI:
+            httpRoute: www-wavesmusicplayer # our created httproute
+            namespace: wavesmusicplayer
+      steps:
+      # 0) Set canary scale to 50% of spec.replicas without changing traffic weight
+      # (supported only with trafficRouting)
+      - setCanaryScale:
+          weight: 50
+      # 1) Run integration test on the canary service
+      - analysis:
+          templates:
+          - templateName: client-integration-test
+          args:
+          - name: service-name
+            value: waves-client-web-prod-canary-service
+      # 2) Pause 1m after integation test
+      - pause:
+          duration: 1m
+      # 3) Sets the ratio of canary ReplicaSet to 50%
+      - setWeight: 50
+      # 4) Set canary scale to match the canary traffic weight (default behavior)
+      - setCanaryScale:
+          matchTrafficWeight: true
+      # 5) Pause for 1 minute while half rollouts completes
+      - pause:
+          duration: 1m
+      # 6) Increase the ratio of canary ReplicaSet to 100%
+      - setWeight: 100
+      # 7) Pause for 1m after full scale up
+      - pause:
+          duration: 1m
+
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: waves-client-web-prod
+  template:
+    metadata:
+      labels:
+        app: waves-client-web-prod
+    spec:
+      containers:
+      - image: osoriano/waves-client-web:latest
+        name: waves-client-web
+        ports:
+        - containerPort: 80
+          name: http
