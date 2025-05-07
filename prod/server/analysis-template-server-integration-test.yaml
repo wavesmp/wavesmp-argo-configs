@@ -19,5 +19,5 @@ spec:
               - name: server-integration-test
                 image: busybox
                 command: [echo]
-                args: ["Running client integration tests for {{args.service-name}}"]
+                args: ["Running server integration tests for {{args.service-name}}"]
               restartPolicy: Never
