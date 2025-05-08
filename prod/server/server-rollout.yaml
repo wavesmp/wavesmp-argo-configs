@@ -73,5 +73,5 @@ spec:
           readOnly: true
       volumes:
       - name: config
-        configMap:
-          name: waves-server-rust-prod
+        secret:
+          secretName: waves-server-rust-prod
