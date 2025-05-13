@@ -57,7 +57,7 @@ spec:
         app: waves-client-web-prod
     spec:
       containers:
-      - image: osoriano/waves-client-web:latest
+      - image: ghcr.io/wavesmp/wavesmp/client:ccf32cc038afbee49bfd96f655b71c4a45bd7a04
         name: waves-client-web
         ports:
         - containerPort: 80
