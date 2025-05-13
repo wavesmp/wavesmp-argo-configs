@@ -5,7 +5,7 @@ metadata:
   name: waves-client-web-prod
   labels:
     app.kubernetes.io/instance: waves-client-web-prod
-    app.kubernetes.io/version: latest
+    app.kubernetes.io/version: ccf32cc038afbee49bfd96f655b71c4a45bd7a04
 spec:
   replicas: 2
   strategy:
