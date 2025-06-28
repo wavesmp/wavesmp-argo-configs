@@ -5,7 +5,7 @@ metadata:
   name: waves-client-web-prod
   labels:
     app.kubernetes.io/instance: waves-client-web-prod
-    app.kubernetes.io/version: 202b3e6d44dd29cf13b202aeb4c916eb1eeab7cc
+    app.kubernetes.io/version: aedcb22769ebfa304c3af9918f424f91531d4ac9
 spec:
   replicas: 2
   strategy:
@@ -57,7 +57,7 @@ spec:
         app: waves-client-web-prod
     spec:
       containers:
-      - image: ghcr.io/wavesmp/wavesmp/client:202b3e6d44dd29cf13b202aeb4c916eb1eeab7cc
+      - image: ghcr.io/wavesmp/wavesmp/client:aedcb22769ebfa304c3af9918f424f91531d4ac9
         name: waves-client-web
         ports:
         - containerPort: 80
