@@ -17,7 +17,8 @@ spec:
             spec:
               containers:
               - name: server-integration-test
-                image: busybox
-                command: [echo]
-                args: ["Running server integration tests for {{args.service-name}}"]
+                image: ghcr.io/wavesmp/wavesmp/server-integration-test:a5b0b42669f0bc0cefe12176e8e6547b15a82946
+                env:
+                - name: WAVESMP_TEST_HOST
+                  value: "{{args.service-name}}"
               restartPolicy: Never
