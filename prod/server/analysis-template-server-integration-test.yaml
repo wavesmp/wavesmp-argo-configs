@@ -17,7 +17,7 @@ spec:
             spec:
               containers:
               - name: server-integration-test
-                image: ghcr.io/wavesmp/wavesmp/server-integration-test:e94fca962091c4155b43fecef67f0dc8558f7c00
+                image: ghcr.io/wavesmp/wavesmp/server-integration-test:aedcb22769ebfa304c3af9918f424f91531d4ac9
                 env:
                 - name: WAVESMP_TEST_HOST
                   value: "{{args.service-name}}"
