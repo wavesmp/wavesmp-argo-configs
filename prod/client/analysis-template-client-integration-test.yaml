@@ -17,7 +17,8 @@ spec:
             spec:
               containers:
               - name: client-integration-test
-                image: busybox
-                command: [echo]
-                args: ["Running client integration tests for {{args.service-name}}"]
+                image: ghcr.io/wavesmp/wavesmp/client-integration-test:aedcb22769ebfa304c3af9918f424f91531d4ac9
+                args:
+                - "./integration-test.sh"
+                - "http://{{args.service-name}}"
               restartPolicy: Never
