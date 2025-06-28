@@ -56,7 +56,7 @@ spec:
         app: waves-server-rust-prod
     spec:
       containers:
-      - image: osoriano/waves-server-rust:latest
+      - image: ghcr.io/wavesmp/wavesmp/server:a5b0b42669f0bc0cefe12176e8e6547b15a82946
         name: waves-server-rust
         env:
         - name: RUST_LOG
