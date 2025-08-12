@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: wavesmusicplayer
+  namespace: wavesmp
   name: waves-server-rust-prod-stable-service
 spec:
   ports:

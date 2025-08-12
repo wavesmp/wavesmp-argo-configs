@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  namespace: wavesmusicplayer
+  namespace: wavesmp
   name: waves-client-web-prod
   labels:
     app.kubernetes.io/instance: waves-client-web-prod
@@ -17,7 +17,7 @@ spec:
         plugins:
           argoproj-labs/gatewayAPI:
             httpRoute: www-wavesmusicplayer # our created httproute
-            namespace: wavesmusicplayer
+            namespace: wavesmp
       steps:
       # 0) Set canary scale to 50% of spec.replicas without changing traffic weight
       # (supported only with trafficRouting)

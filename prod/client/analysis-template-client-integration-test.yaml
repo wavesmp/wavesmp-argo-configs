@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
   name: client-integration-test
-  namespace: wavesmusicplayer
+  namespace: wavesmp
 spec:
   args:
   - name: service-name
