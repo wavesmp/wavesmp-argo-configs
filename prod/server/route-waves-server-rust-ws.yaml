@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  namespace: wavesmp
+  name: waves-server-rust-ws
+spec:
+  parentRefs:
+  - name: waves-server-rust
+    kind: Service
+    group: core
+    port: 16244
+  rules:
+  - backendRefs:
+    - name: waves-server-rust-prod-canary-service
+      kind: Service
+      port: 16244
+    - name: waves-server-rust-prod-stable-service
+      kind: Service
+      port: 16244

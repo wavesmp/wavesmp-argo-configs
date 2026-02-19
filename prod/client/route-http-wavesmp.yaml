@@ -1,0 +1,20 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  namespace: wavesmp
+  name: http-wavesmp
+spec:
+  parentRefs:
+  - name: default-gateway
+    namespace: default
+    sectionName: http-wavesmp-gw
+  hostnames:
+  - www.wavesmusicplayer.com
+  - wavesmusicplayer.com
+  rules:
+  - filters:
+    - type: RequestRedirect
+      requestRedirect:
+        scheme: https
+        hostname: www.wavesmusicplayer.com
+        statusCode: 301

@@ -1,0 +1,20 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  namespace: wavesmp
+  name: www-wavesmp
+spec:
+  parentRefs:
+  - name: default-gateway
+    namespace: default
+    sectionName: www-wavesmp-gw
+  hostnames:
+  - www.wavesmusicplayer.com
+  rules:
+  - backendRefs:
+    - name: waves-client-web-prod-canary-service
+      kind: Service
+      port: 80
+    - name: waves-client-web-prod-stable-service
+      kind: Service
+      port: 80
