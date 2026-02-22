@@ -7,7 +7,7 @@ spec:
   parentRefs:
   - name: waves-server-rust
     kind: Service
-    group: core
+    group: ""
     port: 16244
   rules:
   - backendRefs:
