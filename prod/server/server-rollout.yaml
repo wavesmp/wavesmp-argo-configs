@@ -47,6 +47,8 @@ spec:
       - pause:
           duration: 1m
   revisionHistoryLimit: 2
+  rollbackWindow:
+    revisions: 2
   selector:
     matchLabels:
       app: waves-server-rust-prod
