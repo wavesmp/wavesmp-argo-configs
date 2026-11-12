@@ -7,7 +7,7 @@ spec:
   parentRefs:
   - name: default-gateway
     namespace: default
-    sectionName: http-wavesmp-gw
+    sectionName: http-gw
   hostnames:
   - www.wavesmusicplayer.com
   - wavesmusicplayer.com
