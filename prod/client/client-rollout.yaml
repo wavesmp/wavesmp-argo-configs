@@ -30,6 +30,8 @@ spec:
           args:
           - name: service-name
             value: waves-client-web-prod-canary-service
+          - name: app-under-test
+            value: waves-client-web-prod
       # 2) Pause 1m after integation test
       - pause:
           duration: 1m
