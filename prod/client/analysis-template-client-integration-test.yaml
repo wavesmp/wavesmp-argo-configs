@@ -19,6 +19,7 @@ spec:
               labels:
                 app: client-integration-test
                 app.kubernetes.io/version: 0eee282487547bb1391e5a916e77bda4c10758c4
+                app-under-test: "{{args.app-under-test}}"
                 jettisonproj.io/app-under-test: "{{args.app-under-test}}"
             spec:
               containers:
