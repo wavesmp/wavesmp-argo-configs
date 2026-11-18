@@ -17,6 +17,7 @@ spec:
             metadata:
               labels:
                 app: client-integration-test
+                app.kubernetes.io/version: 0eee282487547bb1391e5a916e77bda4c10758c4
             spec:
               containers:
               - name: client-integration-test
