@@ -17,7 +17,7 @@ spec:
             spec:
               containers:
               - name: client-integration-test
-                image: ghcr.io/wavesmp/wavesmp/client-integration-test:0f28aedb42261bfdb1c3a3a1df735b4d993ae708
+                image: ghcr.io/wavesmp/wavesmp/client-integration-test:0eee282487547bb1391e5a916e77bda4c10758c4
                 args:
                 - "./integration-test.sh"
                 - "http://{{args.service-name}}"
