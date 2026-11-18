@@ -3,6 +3,8 @@ kind: AnalysisTemplate
 metadata:
   name: client-integration-test
   namespace: wavesmp
+  labels:
+    app.kubernetes.io/version: 0eee282487547bb1391e5a916e77bda4c10758c4
 spec:
   args:
   - name: service-name
