@@ -54,10 +54,12 @@ spec:
   selector:
     matchLabels:
       app: waves-server-rust-prod
+      jettison-app: waves-server-rust-prod
   template:
     metadata:
       labels:
         app: waves-server-rust-prod
+        jettison-app: waves-server-rust-prod
         app.kubernetes.io/version: aedcb22769ebfa304c3af9918f424f91531d4ac9
     spec:
       containers:

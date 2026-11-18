@@ -20,7 +20,7 @@ spec:
                 app: server-integration-test
                 app.kubernetes.io/version: aedcb22769ebfa304c3af9918f424f91531d4ac9
                 app-under-test: "{{args.app-under-test}}"
-                jettisonproj.io/app-under-test: "{{args.app-under-test}}"
+                jettison-app: "{{args.app-under-test}}"
             spec:
               containers:
               - name: server-integration-test

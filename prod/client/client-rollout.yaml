@@ -55,10 +55,12 @@ spec:
   selector:
     matchLabels:
       app: waves-client-web-prod
+      jettison-app: waves-client-web-prod
   template:
     metadata:
       labels:
         app: waves-client-web-prod
+        jettison-app: waves-client-web-prod
         app.kubernetes.io/version: 0eee282487547bb1391e5a916e77bda4c10758c4
     spec:
       containers:
