@@ -57,6 +57,7 @@ spec:
     metadata:
       labels:
         app: waves-client-web-prod
+        app.kubernetes.io/version: 0eee282487547bb1391e5a916e77bda4c10758c4
     spec:
       containers:
       - image: ghcr.io/wavesmp/wavesmp/client:0eee282487547bb1391e5a916e77bda4c10758c4
