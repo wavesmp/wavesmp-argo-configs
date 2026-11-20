@@ -70,8 +70,6 @@ spec:
           value: info
         ports:
         - containerPort: 16244
-          name: ws
-        - containerPort: 16245
           name: http
         volumeMounts:
         - name: config

@@ -6,8 +6,6 @@ metadata:
 spec:
   ports:
   - port: 16244
-    name: ws
-  - port: 16245
     name: http
   selector:
     app: waves-server-rust-prod

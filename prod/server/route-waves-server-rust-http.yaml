@@ -8,12 +8,12 @@ spec:
   - name: waves-server-rust
     kind: Service
     group: ""
-    port: 16245
+    port: 16244
   rules:
   - backendRefs:
     - name: waves-server-rust-prod-canary-service
       kind: Service
-      port: 16245
+      port: 16244
     - name: waves-server-rust-prod-stable-service
       kind: Service
-      port: 16245
+      port: 16244
