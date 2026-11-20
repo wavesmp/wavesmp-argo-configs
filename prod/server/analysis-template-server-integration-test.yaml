@@ -4,7 +4,7 @@ metadata:
   name: server-integration-test
   namespace: wavesmp
   labels:
-    app.kubernetes.io/version: cf4cac01d8f5a7cd2861058f04cbf0dde72f9c42
+    app.kubernetes.io/version: 48a780886bc07dbbf74d628d968a516ef58e103b
 spec:
   args:
   - name: service-name
@@ -20,13 +20,13 @@ spec:
             metadata:
               labels:
                 app: server-integration-test
-                app.kubernetes.io/version: cf4cac01d8f5a7cd2861058f04cbf0dde72f9c42
+                app.kubernetes.io/version: 48a780886bc07dbbf74d628d968a516ef58e103b
                 app-under-test: "{{args.app-under-test}}"
                 jettison-app: "{{args.app-under-test}}"
             spec:
               containers:
               - name: server-integration-test
-                image: ghcr.io/wavesmp/wavesmp/server-integration-test:cf4cac01d8f5a7cd2861058f04cbf0dde72f9c42
+                image: ghcr.io/wavesmp/wavesmp/server-integration-test:48a780886bc07dbbf74d628d968a516ef58e103b
                 env:
                 - name: WAVESMP_TEST_HOST
                   value: "{{args.service-name}}"

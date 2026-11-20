@@ -5,7 +5,7 @@ metadata:
   name: waves-server-rust-prod
   labels:
     app.kubernetes.io/instance: waves-server-rust-prod
-    app.kubernetes.io/version: cf4cac01d8f5a7cd2861058f04cbf0dde72f9c42
+    app.kubernetes.io/version: 48a780886bc07dbbf74d628d968a516ef58e103b
 spec:
   replicas: 2
   strategy:
@@ -60,10 +60,10 @@ spec:
       labels:
         app: waves-server-rust-prod
         jettison-app: waves-server-rust-prod
-        app.kubernetes.io/version: cf4cac01d8f5a7cd2861058f04cbf0dde72f9c42
+        app.kubernetes.io/version: 48a780886bc07dbbf74d628d968a516ef58e103b
     spec:
       containers:
-      - image: ghcr.io/wavesmp/wavesmp/server:cf4cac01d8f5a7cd2861058f04cbf0dde72f9c42
+      - image: ghcr.io/wavesmp/wavesmp/server:48a780886bc07dbbf74d628d968a516ef58e103b
         name: waves-server-rust
         env:
         - name: RUST_LOG
